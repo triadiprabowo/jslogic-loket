@@ -1,0 +1,65 @@
+<div class="wrapper type--outer">
+	<div class="container" *ngIf="$vm.form">
+		<form [formGroup]="$vm.form">
+			<div class="row">
+				<div class="col-12">
+					<div class="form-group" [ngClass]="service.setValidityInputClass('name')">
+						<label class="form-control-label">Name</label>
+						<input type="text" class="form-control" formControlName="name" name="name" />
+
+						<span class="invalid-feedback">{{$vm.errors.name}}</span>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="form-group" [ngClass]="service.setValidityInputClass('email')">
+						<label class="form-control-label">Email</label>
+						<input type="email" class="form-control" formControlName="email" name="email" />
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="form-group"  [ngClass]="service.setValidityInputClass('phoneNumber')">
+						<div class="row">
+							<div class="col-md-12 col-12">					
+								<label class="form-control-label">Phone</label>
+							</div>
+
+							<div class="col-md-2 col-2">
+								<select class="form-control" formControlName="phoneCountry" name="phoneCountry">
+									<option value="+61">+61</option>
+									<option value="+62">+62</option>
+								</select>
+							</div>
+
+							<div class="col-md-10 col-10">
+								<input type="number" class="form-control" formControlName="phoneNumber" name="phoneNumber" />
+							</div>
+
+							<div class="col-12">
+								<span class="invalid-feedback">{{$vm.errors.phoneNumber}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12">
+					<div class="form-group"  [ngClass]="service.setValidityInputClass('address')">
+						<label class="form-control-label">Address</label>
+						<textarea class="form-control" formControlName="address"></textarea>
+					</div>
+				</div>	
+
+				<div class="col-12">
+					<div class="form-check">
+						<label><input type="checkbox" class="form-check-input" formControlName="subscribed" name="subscribed"  (click)="$vm.form.patchValue({ subscribed: !$vm.form.value.subscribed })"> Subscribe to our newsletter</label>
+					</div>
+				</div>
+
+				<div class="col-12 align--right mg--top-sm">
+					<button class="btn btn-lg btn-block btn-primary" [disabled]="$vm.form.invalid || $vm.actionBusy" (click)="service.submitForm()">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

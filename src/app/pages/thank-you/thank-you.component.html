@@ -1,0 +1,19 @@
+<div class="block block--middle">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 align--center">
+				<div class="block type--content">
+					<h1 class="title no--border size--xl">Thank you!</h1>
+
+					<img src="/assets/hooray.png" />
+
+					<h4>We have received your order successfully with invoice <b>#{{generateInvcode()}}</b><br> ticket has been sent to email <b>{{formData.email}}</b></h4>
+				</div>
+
+				<div class="block type--container">
+					<button class="btn btn-success btn-lg" (click)="router.navigateByUrl('/order-application-form')">Make another order!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

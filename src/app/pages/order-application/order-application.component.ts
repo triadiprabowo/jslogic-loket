@@ -7,11 +7,18 @@ import { OrderApplicationService } from './order-application.service';
 	selector: 'app-orderapp-component'
 })
 export class OrderApplicationComponent implements OnInit {
+	public $vm:any;
+
 	constructor(public service:OrderApplicationService) {
 
 	}
 
 	public ngOnInit(): void {
-		
+		this.service.$data.subscribe(models => {
+			this.$vm = models;
+		});
+
+		// init form
+		this.service.buildForm();
 	}
 }

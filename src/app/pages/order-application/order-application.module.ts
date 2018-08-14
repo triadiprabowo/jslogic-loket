@@ -6,6 +6,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { OrderApplicationComponent } from './order-application.component';
 import { OrderApplicationService } from './order-application.service';
+import { SuccessDialog } from './shared/dialogs/success-dialog.component';
 
 @NgModule({
 	imports: [
@@ -17,7 +18,8 @@ import { OrderApplicationService } from './order-application.service';
 			{ path: '', component: OrderApplicationComponent }
 		])
 	],
-	declarations: [OrderApplicationComponent],
+	declarations: [OrderApplicationComponent, SuccessDialog],
+	entryComponents: [SuccessDialog],
 	providers: [OrderApplicationService]
 })
 export class OrderApplicationModule { }

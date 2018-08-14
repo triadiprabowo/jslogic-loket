@@ -1,5 +1,63 @@
 @import '../variables'
 
 .form-group
+	margin-bottom $margin_px_sm
+	display block
+	overflow hidden
+	
+	.form--icon-img
+		height 48px
+	
 	.form-control-label
 		font-size $font__size-sm + 1px
+		
+	.form-control-label
+		&.is-invalid
+			color $clr__error-text
+		
+		&.is-valid
+			color $clr__success-text
+			
+	&.is-valid
+		.form-control-label
+			color $clr__success-text
+			
+		.form-control
+			border-color $clr__success-text
+			
+		.form-control:focus
+			border-color $clr__success-text
+			box-shadow 0 0 0 0.2rem rgba(40, 167, 69, 0.25)
+		
+		.input-group .input-group-prepend .input-group-text
+			border-color $clr__success-text
+			
+		.valid-feedback
+			display block
+			
+			.icon
+				color $clr__success-text
+	
+	&.is-invalid
+		.form-control-label
+			color $clr__error-text
+			
+		.form-control
+			border-color $clr__error-text
+			
+		.form-control:focus
+			border-color $clr__error-text
+			box-shadow 0 0 0 0.2rem rgba(220, 53, 69, 0.25)
+		
+		.input-group .input-group-prepend .input-group-text
+			border-color $clr__error-text
+		
+		.invalid-feedback
+			display block
+			
+			.icon
+				color $clr__error-text
+				
+	textarea
+		resize none
+		height 80px

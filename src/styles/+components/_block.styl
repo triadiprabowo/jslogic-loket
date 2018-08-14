@@ -5,6 +5,19 @@
 	display block
 	overflow hidden
 	
+	&.block--middle
+		margin-top 15vh
+		
+	&.type--container
+		margin $margin_px_md 0
+	
+	&.type--content
+		h4
+			margin-top $margin_px_sm
+			font-size $font__size-subtitle
+			line-height 1.65em
+			color $clr__content
+	
 	.title
 		font-size $font__size-title-normal
 		font-weight bold
@@ -12,4 +25,10 @@
 		padding-bottom $padding_px_sm
 		border-bottom 1px solid $clr__separator
 		margin-bottom $margin_px_md
+		
+		&.size--xl
+			font-size $font__size-title-big
+		
+		&.no--border
+			border-bottom 0
 		
