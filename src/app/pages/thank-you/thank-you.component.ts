@@ -11,7 +11,7 @@ import * as cookies from 'js-cookie';
 export class ThankYouComponent {
 	public formData:any;
 
-	constructor(private router:Router, private title:Title) {
+	constructor(public router:Router, private title:Title) {
 		title.setTitle('Thank you for your order!')
 	}
 

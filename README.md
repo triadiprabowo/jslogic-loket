@@ -1,27 +1,44 @@
-# JsloketAssignment
+# JS Logic Loket Assignment
+![Build Success](https://img.shields.io/shippable/5444c5ecb904a4b21567b0ff.svg) [![Angular6](https://img.shields.io/badge/build-angular6-green.svg)](https://angular.io) [![LazyLoad](https://img.shields.io/badge/lazyload-success-green.svg)](https://angular.io)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
+This project built for Loket recruitment assignment using Angular 6, and Angular-CLI 6.1. This project using Karma and Jasmine as unit testing, lazy-load design pattern, AoT compilation, shared modules/components to be reusable and reactive programming. Optimization after running build production using Gulp, rendering gzip file to compress more file size, optimize image size, GZIP enabled.
+### [Live Demo](https://swloket.triadiprabowo.com)
 
-## Development server
+### Project Requirements
+* `Node JS version > 8.9`
+* `NPM version > 5.6`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Update NodeJS to Latest (Linux)
+```
+sudo apt-get remove nodejs && sudo apt-get remove npm
+sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules 
+sudo rm -rf /usr/local/lib/node*
+sudo rm -rf /usr/local/include/node*
+sudo rm -rf /usr/local/bin/node*
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+ln -s /usr/bin/node /usr/local/bin/node 
+```
 
-## Code scaffolding
+### Commands Available
+* `npm start` - Start dev server
+* `npm test` - Start unit test using karma and jasmine
+* `npm run webpack:server` - Build server config file (to run sever after build)
+* `npm run optimize` - Postbuild optimization because angular-cli doesn't give webpack config unless we do `ng eject`
+* `npm run build` - Build project in development environment
+* `npm run build:prod` Build project in production environment (compiling server and optimization enabled)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Below commands are usable if `npm run build:prod` has been succesfully executed:
+* `npm start:server` - Start production server (with node environment)
+* `npm start:forever` - Start production server (with pm2 environment)
+* `npm stop:forever` - Stop production server (with pm2 environment)
 
-## Build
+### How-To Setup Project for First Time
+* Run `npm install` - to fresh install node modules
+* Run `npm install -D @angular-devkit/build-angular` - to update current angular devkit to support build project in production environment
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Run Locally
+* Run `npm start` - starting local server in localhost port 4000
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Build in production environment
+* Run `npm run build:prod` - build angular project in production environment
